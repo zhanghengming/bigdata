@@ -1,0 +1,15 @@
+Event{user='Bob', url='./cart', timestamp=1677573668224}
+Event{user='Alice', url='./prod?id=2', timestamp=1677573672266}
+Event{user='Bob', url='./prod?id=1', timestamp=1677573676323}
+Event{user='Alice', url='./prod?id=1', timestamp=1677573680355}
+Event{user='Bob', url='./prod?id=2', timestamp=1677573684392}
+Event{user='Alice', url='./cart', timestamp=1677573688441}
+Event{user='Bob', url='./prod?id=2', timestamp=1677573692489}
+Event{user='Alice', url='./prod?id=2', timestamp=1677573696520}
+Event{user='Bob', url='./prod?id=2', timestamp=1677573700571}
+Event{user='Mary', url='./fav', timestamp=1677573704610}
+Event{user='Cary', url='./cart', timestamp=1677573708656}
+Event{user='Alice', url='./fav', timestamp=1677573712705}
+Event{user='Alice', url='./prod?id=2', timestamp=1677573716751}
+Event{user='Bob', url='./home', timestamp=1677573720783}
+Event{user='Mary', url='./prod?id=2', timestamp=1677573724821}

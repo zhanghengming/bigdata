@@ -1,0 +1,16 @@
+Event{user='Bob', url='./prod?id=1', timestamp=1677573667222}
+Event{user='Alice', url='./prod?id=1', timestamp=1677573671251}
+Event{user='Cary', url='./fav', timestamp=1677573675309}
+Event{user='Cary', url='./cart', timestamp=1677573679350}
+Event{user='Alice', url='./home', timestamp=1677573683379}
+Event{user='Cary', url='./fav', timestamp=1677573687425}
+Event{user='Cary', url='./prod?id=2', timestamp=1677573691478}
+Event{user='Mary', url='./cart', timestamp=1677573695518}
+Event{user='Cary', url='./prod?id=1', timestamp=1677573699563}
+Event{user='Mary', url='./home', timestamp=1677573703600}
+Event{user='Cary', url='./prod?id=2', timestamp=1677573707643}
+Event{user='Cary', url='./fav', timestamp=1677573711691}
+Event{user='Alice', url='./prod?id=2', timestamp=1677573715741}
+Event{user='Mary', url='./fav', timestamp=1677573719776}
+Event{user='Cary', url='./cart', timestamp=1677573723820}
+Event{user='Mary', url='./prod?id=2', timestamp=1677573727856}
