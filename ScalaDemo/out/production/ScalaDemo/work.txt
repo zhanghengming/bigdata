@@ -1,0 +1,5 @@
+UserA,LocationA,8,60
+UserA,LocationA,8,60
+UserA,LocationA,9,60
+UserB,LocationB,10,60
+UserB,LocationB,11,80
