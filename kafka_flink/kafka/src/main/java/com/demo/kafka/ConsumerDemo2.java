@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Properties;
 
-// 每次都得推到重来，2.4.1版本之后就改了
+// 消费组再均衡机制 每次都得推到重来，2.4.1版本之后就改了
 public class ConsumerDemo2 {
     public static void main(String[] args) throws IOException {
         Properties props = new Properties();

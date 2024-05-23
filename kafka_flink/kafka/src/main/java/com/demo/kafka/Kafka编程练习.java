@@ -62,4 +62,5 @@ class UserEvent{
     private long guid;
     private String eventId;
     private long timestamp;
+    private Integer flag;
 }
