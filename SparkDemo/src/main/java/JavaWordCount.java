@@ -7,7 +7,7 @@ import scala.Tuple2;
 import java.util.Arrays;
 
 public class JavaWordCount {
-    public static void main(String[] args) {
+    public  void main(String[] args) {
         // 1 创建 JavaSparkContext
         SparkConf sparkConf = new SparkConf().setAppName("JavaWordCount").setMaster("local[*]");
         JavaSparkContext javaSparkContext = new JavaSparkContext(sparkConf);
