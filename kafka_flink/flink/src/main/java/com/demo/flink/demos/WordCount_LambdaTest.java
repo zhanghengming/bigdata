@@ -22,7 +22,7 @@ public class WordCount_LambdaTest {
         // 流式处理入口环境
         StreamExecutionEnvironment envStream = StreamExecutionEnvironment.getExecutionEnvironment();
 
-        DataStreamSource<String> streamSource = envStream.readTextFile("flink_course/data/wc/input/wc.txt");
+        DataStreamSource<String> streamSource = envStream.readTextFile("flink/data/wc/input/wc.txt");
 
         // 先把句子变大写
         /* 从map算子接收的MapFunction接口实现来看，它是一个单抽象方法的接口
@@ -76,7 +76,7 @@ public class WordCount_LambdaTest {
             }
         })*/
         // 从上面的KeySelector接口来看，它依然是一个 单抽象方法的 接口，所以它的方法实现，依然可以用lambda表达式来实现
-        KeyedStream<Tuple2<String, Integer>, String> keyedStream = wordAndOne.keyBy((value) -> value.f0);
+        KeyedStream<Tuple2<String, Integer>, String> keyedStream = wordAndOne.keyBy(value -> value.f0);
 
 
         // 统计单词个数

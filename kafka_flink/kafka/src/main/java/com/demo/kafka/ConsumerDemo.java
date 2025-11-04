@@ -59,5 +59,7 @@ public class ConsumerDemo {
         }
         // 5. 关闭消费者
         kafkaConsumer.close();
+
+
     }
 }
