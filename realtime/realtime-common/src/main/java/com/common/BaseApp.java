@@ -1,9 +1,11 @@
 package com.common;
 
+import org.apache.flink.api.common.eventtime.WatermarkStrategy;
 import org.apache.flink.api.common.restartstrategy.RestartStrategies;
 import org.apache.flink.connector.kafka.source.KafkaSource;
 import org.apache.flink.runtime.state.hashmap.HashMapStateBackend;
 import org.apache.flink.streaming.api.CheckpointingMode;
+import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.environment.CheckpointConfig;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 
@@ -13,7 +15,7 @@ import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
  * @since ：2025/11/5 14:39
  */
 public abstract class BaseApp {
-    public void start() throws Exception {
+    public void start(int port, int parallelism, String ckAndGroupId, String topic) throws Exception {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.setParallelism(1);
         env.enableCheckpointing(5000L, CheckpointingMode.EXACTLY_ONCE);
@@ -26,16 +28,17 @@ public abstract class BaseApp {
 
         // 获取source
         KafkaSource<String> kafkaSource = FlinkSourceUtil.getKafkaSource("test", "test");
+        DataStreamSource<String> stream = env.fromSource(kafkaSource, WatermarkStrategy.noWatermarks(), "kafka_source");
         /**
          * 模版方法设计模式：某个方法我不知道怎么去实现，只能提供方法的声明，具体的实现留给子类去完成。
          * 定义成一个抽象方法，一个类中有一个抽象方法，那么这个类就要定义为抽象类。
          */
         // 处理逻辑
-        handle(env, kafkaSource);
+        handle(env, stream);
         env.execute();
 
     }
 
-    public abstract void handle(StreamExecutionEnvironment env, Object source);
+    public abstract void handle(StreamExecutionEnvironment env, DataStreamSource<String> stream);
 
 }
